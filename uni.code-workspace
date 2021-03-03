@@ -7,5 +7,7 @@
 		"path": "D:\\OpenServer\\domains\\universal.local\\wp-content\\themes\\uni-example"
 	}
 ],
-  "settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "uni-theme"
+	}
 }
