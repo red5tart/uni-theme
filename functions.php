@@ -44,5 +44,10 @@ function delete_intermediate_image_sizes( $sizes ){
 		'large',
 		'1536x1536',
 		'2048x2048',
-	] );
+  ] );
+}
+
+##добавляем миниатюру 65х65
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'thumb65', 65, 65, true ); // Кадрирование изображения
 }

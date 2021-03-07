@@ -114,7 +114,7 @@
         <a class="article-permalink" href="<?php echo get_the_permalink(); ?>">
           <h4 class="article-title"><?php echo wp_trim_words(get_the_title(), 6, '...'); ?></h4>
         </a>
-        <img width="65" height="65" src="<?php echo get_the_post_thumbnail_url( null, 'thumbnail')?>" alt="">
+        <img width="65" height="65" src="<?php echo get_the_post_thumbnail_url( null, 'thumb65')?>" alt="">
       </li>
       <?php 
         }
