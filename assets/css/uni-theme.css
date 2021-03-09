@@ -385,8 +385,6 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .article-date {
@@ -731,6 +729,7 @@ body {
 }
 
 .sidebar-front-page {
+  padding-top: 30px;
   width: 23%;
 }
 

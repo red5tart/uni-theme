@@ -135,7 +135,7 @@
           //получаем семь постов
           'posts_per_page' => 7,
         ] );
-        //проверяем,есть  ли посты
+        //проверяем,есть ли посты
         if ( $query->have_posts() ) {
           //создаем переменную-счетчик постов
           $cnt = 0;
@@ -181,7 +181,7 @@
               case '2': 
                 ?>
                   <li class="article-grid-item article-grid-item-2">
-                    <img src="<?php echo get_the_post_thumbnail_url()?>" alt="" class="article-grid-thumb">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="article-grid-thumb">
                     <a href="<?php echo the_permalink()?>" class="article-grid-permalink">
                       <span class="tag">
                         <?php 
@@ -259,16 +259,16 @@
             <?php 
           }
         } else {
-      // Постов не найдено
-      }
+        // Постов не найдено
+        }
 
-      wp_reset_postdata(); // Сбрасываем $post
+        wp_reset_postdata(); // Сбрасываем $post
       ?>
     </ul>
-    <!-- /.article-grid -->
-  
-  <!-- Подключаем сайдбар -->
-  <?php get_sidebar( )?>
+    <!-- /.article-grid - конец плиточной раскладки слева -->
+
+      <!-- Подключаем сайдбар -->
+    <?php get_sidebar(); ?> 
   </div>
   <!-- /.main-grid -->
 </div>

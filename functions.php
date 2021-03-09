@@ -35,15 +35,16 @@ function enqueue_unitheme_style() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_unitheme_style' );
 
-/**
- * Подключение сайдбара
+/* Register widget area / подключение  сайдбара-2
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function uni_theme_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Сайдбар на главной', 'uni-theme' ),
 			'id'            => 'main-sidebar',
-			'description'   => esc_html__( 'Добавьте виджеты сюда', 'uni-theme' ),
+			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'uni-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -65,7 +66,7 @@ class Downloader_Widget extends WP_Widget {
 		parent::__construct(
 			'downloader_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: downloader_widget
 			'Полезные файлы',
-			array( 'description' => 'Файлы для скачивания', 'classname' => 'widget_downloader', )
+			array( 'description' => 'Файлы для скачивания', 'classname' => 'widget-downloader', )
 		);
 
 		// скрипты/стили виджета, только если он активен
@@ -82,21 +83,23 @@ class Downloader_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function widget( $args, $instance ) {
-    $title = $instance['title'] ;
-    $description = $instance['description'] ;
-    $link = $instance['link'] ;
+		$title = $instance['title'];
+		$description = $instance['description'];
+		$link = $instance['link'];
 
 		echo $args['before_widget'];
 		if ( ! empty( $title ) ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
-    if ( ! empty( $description ) ) {
+		if ( ! empty( $description ) ) {
 			echo '<p>' . $description . '</p>';
-    }
-    if ( ! empty( $link ) ) {
-      echo '<a target="_blank" class="widget-link" href="' . $link . '"><img class="widget-link-icon" src="' . get_template_directory_uri(). '/assets/images/download.svg" >Скачать</a>';
 		}
-    echo $args['after_widget'];
+		if ( ! empty( $link ) ) {
+			echo '<a target="_blank" class="widget-link" href="' . $link . '">
+			<img class="widget-link-icon" src="' . get_template_directory_uri(). '/assets/images/download.svg" >
+			Скачать</a>';
+		}
+		echo $args['after_widget'];
 	}
 
 	/**
@@ -105,20 +108,20 @@ class Downloader_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function form( $instance ) {
-    $title = @ $instance['title'] ?: 'Полезные файлы';
-    $description = @ $instance['description'] ?: 'Описание ';
-    $link = @ $instance['link'] ?: 'http://yandex.ru ';
+		$title = @ $instance['title'] ?: 'Полезные файлы';
+		$description = @ $instance['description'] ?: 'Описание';
+		$link = @ $instance['link'] ?: 'http://yandex.ru';		
 
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-    <p>
+			<p>
 			<label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Описание:' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" type="text" value="<?php echo esc_attr( $description ); ?>">
 		</p>
-    <p>
+		<p>
 			<label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Ссылка на файл:' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
 		</p>
@@ -138,13 +141,15 @@ class Downloader_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-    $instance['description'] = ( ! empty( $new_instance['description'] ) ) ? strip_tags( $new_instance['description'] ) : '';
-    $instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags( $new_instance['link'] ) : '';
+		$instance['description'] = ( ! empty( $new_instance['description'] ) ) ? strip_tags( $new_instance['description'] ) : '';
+		$instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags( $new_instance['link'] ) : '';		
+
+
 		return $instance;
 	}
 
 	// скрипт виджета
-	function add_downloader_widget_scripts() {
+	function add_my_widget_scripts() {
 		// фильтр чтобы можно было отключить скрипты
 		if( ! apply_filters( 'show_my_widget_script', true, $this->id_base ) )
 			return;
@@ -155,7 +160,7 @@ class Downloader_Widget extends WP_Widget {
 	}
 
 	// стили виджета
-	function add_downloader_widget_style() {
+	function add_my_widget_style() {
 		// фильтр чтобы можно было отключить стили
 		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
 			return;
@@ -174,6 +179,7 @@ function register_downloader_widget() {
 	register_widget( 'Downloader_Widget' );
 }
 add_action( 'widgets_init', 'register_downloader_widget' );
+
 
 ## отключаем создание миниатюр файлов для указанных размеров
 add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
