@@ -268,7 +268,8 @@
     <!-- /.article-grid - конец плиточной раскладки слева -->
 
       <!-- Подключаем сайдбар -->
-    <?php get_sidebar(); ?> 
+    <?php get_sidebar('main');?> 
+    <!-- <?php get_sidebar('footer'); ?>  -->
   </div>
   <!-- /.main-grid -->
 </div>

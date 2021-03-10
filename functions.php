@@ -40,17 +40,24 @@ add_action( 'wp_enqueue_scripts', 'enqueue_unitheme_style' );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function uni_theme_widgets_init() {
-	register_sidebar(
-		array(
+	register_sidebar(array(
 			'name'          => esc_html__( 'Сайдбар на главной', 'uni-theme' ),
 			'id'            => 'main-sidebar',
-			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'uni-theme' ),
+			'description'   => esc_html__( 'колонка виджетов справа', 'uni-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		)
-	);
+		));
+		register_sidebar(array(
+			'name'          => esc_html__( 'Сайдбар нижний', 'uni-theme' ),
+			'id'            => 'footer-sidebar',
+			'description'   => esc_html__( 'горизонтальный виджет', 'uni-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		));
 }
 add_action( 'widgets_init', 'uni_theme_widgets_init' );
 
