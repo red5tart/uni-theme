@@ -4,7 +4,6 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package uni-example
  */
 
 if ( ! is_active_sidebar( 'footer-sidebar' ) ) {
@@ -12,6 +11,6 @@ if ( ! is_active_sidebar( 'footer-sidebar' ) ) {
 }
 ?>
 
-<div id="secondairy" class="sidebar-below">
+<div id="secondary2" class="sidebar-below">
 	<?php dynamic_sidebar( 'footer-sidebar' ); ?>
-</div><!-- #secondairy -->
+</div><!-- #secondary2 -->

@@ -269,7 +269,7 @@
 
       <!-- Подключаем сайдбар -->
     <?php get_sidebar('main');?> 
-    <!-- <?php get_sidebar('footer'); ?>  -->
+
   </div>
   <!-- /.main-grid -->
 </div>

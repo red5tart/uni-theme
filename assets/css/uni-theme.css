@@ -824,11 +824,38 @@ body {
 }
 
 .widget-social-icon {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .widget-social .widget-title {
   text-align: center;
   border: none;
+}
+
+.widget .tagcloud {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 25px;
+  padding-bottom: 35px;
+}
+
+.widget .tag-cloud-link {
+  margin-right: 10px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  color: #262D33;
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 1px solid #D9DADB;
+  border-radius: 5px;
 }
