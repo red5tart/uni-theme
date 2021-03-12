@@ -238,19 +238,6 @@ body {
   z-index: 2;
 }
 
-.hero .left .more {
-  display: inline-block;
-  color: #ffffff;
-  padding: 10px 20px;
-  padding-right: 50px;
-  background: #4592FF;
-  border-radius: 20px;
-  text-decoration: none;
-  background-image: url("../images/arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center right 20px;
-}
-
 .hero .right {
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
@@ -309,6 +296,23 @@ body {
   font-weight: 400;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+.more {
+  display: inline-block;
+  color: #ffffff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  background: #4592FF;
+  border-radius: 20px;
+  text-decoration: none;
+  background-image: url("../images/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+}
+
+.more:visited, .more:focus, .more:hover {
+  color: #ffffff;
 }
 
 .article-list {
@@ -393,7 +397,7 @@ body {
 
 .article-grid {
   width: 74%;
-  margin: 30px 0;
+  margin: 30px 0 60px;
   padding: 0;
   list-style: none;
   display: -ms-grid;
@@ -872,4 +876,21 @@ body {
   padding: 5px 15px;
   border: 1px solid #D9DADB;
   border-radius: 5px;
+}
+
+.investigation {
+  padding: 50px 0 55px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.investigation-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  color: #FFFFFF;
+  max-width: 946px;
+  margin: 0 auto 25px;
 }
