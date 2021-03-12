@@ -243,10 +243,10 @@ class Social_Widget extends WP_Widget {
 	 */
 	function form( $instance ) {
 		$title = @ $instance['title'] ?: 'Наши сети';
-		$link1 = @ $instance['link1'] ?: 'http://facebook.com';
-		$link2 = @ $instance['link2'] ?: 'http://instagram.com';		
-		$link3 = @ $instance['link3'] ?: 'http://vk.com';		
-		$link4 = @ $instance['link4'] ?: 'http://twitter.com';		
+		$link1 = @ $instance['link1'] ?: '';
+		$link2 = @ $instance['link2'] ?: '';		
+		$link3 = @ $instance['link3'] ?: '';		
+		$link4 = @ $instance['link4'] ?: '';		
 
 		?>
 		<p>
