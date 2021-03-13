@@ -908,3 +908,95 @@ body {
 .hotnews-wrapper {
   width: 74%;
 }
+
+.hotnews-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0;
+}
+
+.hotnews-item:not(:last-child) {
+  border-bottom: 1px solid #D9DADB;
+}
+
+.hotnews-item-permalink {
+  text-decoration: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.hotnews-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 25px;
+  margin-bottom: 0;
+}
+
+.hotnews-info {
+  position: relative;
+  width: 100%;
+}
+
+.hotnews .post-categories {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hotnews .post-categories a {
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hotnews-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  color: #262D33;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  max-width: 400px;
+}
+
+.hotnews-excerpt {
+  margin: 0 0 20px;
+}
+
+.hotnews-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hotnews-date, .hotnews-likes, .hotnews-comments {
+  margin-right: 11px;
+  color: #939699;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bookmark {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  cursor: pointer;
+}

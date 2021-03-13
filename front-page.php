@@ -347,9 +347,7 @@ wp_reset_postdata(); // Сбрасываем $post
                 </span>
               </div>
             </div>
-          </a>
-          
-          
+          </a>          
         </div>
         <!-- /.hotnews-info -->
       </li>
