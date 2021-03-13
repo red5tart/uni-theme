@@ -894,3 +894,17 @@ body {
   max-width: 946px;
   margin: 0 auto 25px;
 }
+
+.hotnews {
+  margin-top: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0 25px;
+}
+
+.hotnews-wrapper {
+  width: 74%;
+}

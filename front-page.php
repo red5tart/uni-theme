@@ -163,7 +163,7 @@
                           <img src="<?php echo get_avatar_url($author_id) ?>" alt="" class="author-avatar">
                           <span class="author-name"><strong><?php the_author() ?>: </strong> <?php the_author_meta('description') ?></span>
                           <div class="comments">
-                            <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/comment.svg'?>" alt="icon: comment" class="comments-icon">
+                            <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/comment-grey.svg'?>" alt="icon: comment" class="comments-icon">
                             <span class="comments-counter">
                               <?php comments_number('0', '1', '%') ?>
                             </span>
@@ -202,14 +202,14 @@
                             <span class="author-name"><strong><?php the_author() ?></strong></span>
                             <span class="date"><?php the_time( 'j F' )?></span>
                             <div class="comments">
-                              <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/comment2.svg'?>" alt="icon: comment" class="comments-icon">
+                              <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/comment-white.svg'?>" alt="icon: comment" class="comments-icon">
                               <span class="comments-counter">
                                 <?php comments_number('0', '1', '%') ?>
                               </span>
                             </div>
                               <!-- /.comments -->
                             <div class="likes">
-                              <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/heart.svg'?>" alt="icon: like" class="comments-icon">
+                              <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/heart-white.svg'?>" alt="icon: like" class="comments-icon">
                               <span class="comments-counter">
                                 <?php comments_number('0', '1', '%') ?>
                               </span>
@@ -303,3 +303,66 @@ if ( $query->have_posts() ) {
 wp_reset_postdata(); // Сбрасываем $post
 ?>
 <!-- /.investigation -->
+
+<div class="container">
+  <div class="hotnews-wrapper">
+    <ul class="hotnews">
+      <?php 
+      global $post;
+
+      $myposts = get_posts([
+        'numberposts' => 6, 
+        'orderby' => 'date', 
+        'category_name' => 'news, hot, opinions, compilations', 
+      ]); 
+      if( $myposts ){ 
+      foreach( $myposts as $post ){ setup_postdata( $post ); ?>
+      <!-- Вывод записей -->
+      <li class="hotnews-item">
+        <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
+          <img class="hotnews-img" width="336" height="195" src="<?php echo get_the_post_thumbnail_url( null, 'hotnews-thumb')?>" alt="">
+        </a>
+        <div class="hotnews-info">
+          <button class="bookmark">
+            <img class="bookmark-icon" src="<?php echo get_template_directory_uri(  ) . '/assets/images/bookmark.svg'?>" alt="icon: bookmark">
+          </button>
+          <?php the_category(); ?>
+          <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
+            <h4 class="hotnews-title"><?php echo get_the_title(); ?></h4>
+            <p class="hotnews-excerpt">
+              <?php the_excerpt(); ?>
+            </p>
+            <div class="hotnews-footer">
+              <span class="hotnews-date"><?php the_time( 'j F' )?></span>
+              <div class="hotnews-comments">
+                <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/comment-grey.svg'?>" alt="icon: comment" class="comments-icon">
+                <span class="comments-counter">
+                  <?php comments_number('0', '1', '%') ?>
+                </span>
+              </div>
+              <div class="hotnews-likes">
+                <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/heart-grey.svg'?>" alt="icon: like" class="comments-icon">
+                <span class="comments-counter">
+                  <?php comments_number('0', '1', '%') ?>
+                </span>
+              </div>
+            </div>
+          </a>
+          
+          
+        </div>
+        <!-- /.hotnews-info -->
+      </li>
+      <?php 
+        }
+      } else {
+      ?>
+      <p>Постов нет</p>
+      <?php
+        }
+      wp_reset_postdata(); // Сбрасываем $post
+      ?>
+    </ul> 
+  </div> <!-- /.hotnews-wrapper -->
+</div>
+<!-- /.container -->

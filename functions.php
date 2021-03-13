@@ -359,7 +359,8 @@ function delete_intermediate_image_sizes( $sizes ){
   ] );
 }
 
-##добавляем миниатюру 65х65
+##добавляем миниатюры нужных размеров (65х65 и 336х195)
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'thumb65', 65, 65, true ); // Кадрирование изображения
+	add_image_size( 'hotnews-thumb', 336, 195, true ); 
 }
