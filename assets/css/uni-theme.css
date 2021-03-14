@@ -209,20 +209,6 @@ body {
   border-radius: 50%;
 }
 
-.hero .left .post-categories {
-  padding: 0;
-  margin: 0;
-}
-
-.hero .left .post-categories a {
-  color: #4592FF;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 15px;
-}
-
 .hero .left .post-title {
   font-size: 40px;
   line-height: 50px;
@@ -313,6 +299,31 @@ body {
 
 .more:visited, .more:focus, .more:hover {
   color: #ffffff;
+}
+
+.category-link {
+  color: #4592FF;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.category-link.web-design {
+  color: #FFA34D;
+}
+
+.category-link.javascript {
+  color: #6E99AE;
+}
+
+.category-link.html, .category-link.opinions {
+  color: #AC8EE3;
+}
+
+.category-link.css {
+  color: #3BBDC4;
 }
 
 .article-list {
