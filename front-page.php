@@ -344,7 +344,16 @@ wp_reset_postdata(); // Сбрасываем $post
           <button class="bookmark">
             <img class="bookmark-icon" src="<?php echo get_template_directory_uri(  ) . '/assets/images/bookmark.svg'?>" alt="icon: bookmark">
           </button>
-          <?php the_category(); ?>
+          <?php
+            foreach (get_the_category() as $category) {
+                printf(
+                  '<a href="%s" class="category-link %s">%s</a>', 
+                  esc_url( get_category_link( $category ) ) , 
+                  esc_html( $category -> slug ),
+                  esc_html( $category -> name )
+                );
+              }
+          ?>
           <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
             <h4 class="hotnews-title"><?php echo get_the_title(); ?></h4>
             <p class="hotnews-excerpt">

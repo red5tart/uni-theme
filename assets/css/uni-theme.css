@@ -318,12 +318,20 @@ body {
   color: #6E99AE;
 }
 
-.category-link.html, .category-link.opinions {
+.category-link.html, .category-link.compilations {
   color: #AC8EE3;
 }
 
-.category-link.css {
+.category-link.css, .category-link.opinions {
   color: #3BBDC4;
+}
+
+.category-link.hot {
+  color: #FF4F52;
+}
+
+.category-link.news {
+  color: #4592FF;
 }
 
 .article-list {
