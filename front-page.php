@@ -388,6 +388,8 @@ wp_reset_postdata(); // Сбрасываем $post
       wp_reset_postdata(); // Сбрасываем $post
       ?>
     </ul> 
+    <!-- Подключаем сайдбар -->
+    <?php get_sidebar('bottom');?> 
   </div> <!-- /.hotnews-wrapper -->
 </div>
 <!-- /.container -->
