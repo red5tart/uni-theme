@@ -129,7 +129,14 @@
         <a class="article-permalink" href="<?php echo get_the_permalink(); ?>">
           <h4 class="article-title"><?php echo wp_trim_words(get_the_title(), 6, '...'); ?></h4>
         </a>
-        <img width="65" height="65" src="<?php echo get_the_post_thumbnail_url( null, 'thumb65')?>" alt="">
+        <img width="65" height="65" src="<?php 
+        if( has_post_thumbnail() ) {
+            echo get_the_post_thumbnail_url( null, 'thumb65');
+          }
+          else {
+            echo get_template_directory_uri().'/assets/images/img-default.png';
+          }
+        ?>" alt="">
       </li>
       <?php 
         }
@@ -199,7 +206,12 @@
               case '2': 
                 ?>
                   <li class="article-grid-item article-grid-item-2">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="article-grid-thumb">
+                    <img src="<?php if( has_post_thumbnail() ) {
+                    echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
+                  }
+                  else {
+                    echo get_template_directory_uri().'/assets/images/img-default.png';
+                  }?>" alt="" class="article-grid-thumb">
                     <a href="<?php echo the_permalink()?>" class="article-grid-permalink">
                       <span class="tag">
                         <?php 
@@ -252,7 +264,12 @@
                 ?>
                   <li class="article-grid-item article-grid-item-3">
                     <a href="<?php echo the_permalink()?>" class="article-grid-permalink">
-                      <img class="article-thumb" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                      <img class="article-thumb" src="<?php if( has_post_thumbnail() ) {
+                      echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
+                    }
+                    else {
+                      echo get_template_directory_uri().'/assets/images/img-default.png';
+                    }?>" alt="">
                       <h4 class="article-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 50, '...');
                         ?></h4>
                     </a>
@@ -308,7 +325,12 @@ if ( $query->have_posts() ) {
 	while ( $query->have_posts() ) {
 		$query->the_post();
     ?>
-    <section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.45), rgba(64, 48, 61, 0.45)), url(<?php echo get_the_post_thumbnail_url( )?>) no-repeat center center">
+    <section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.45), rgba(64, 48, 61, 0.45)), url(<?php if( has_post_thumbnail() ) {
+      echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
+    }
+    else {
+      echo get_template_directory_uri().'/assets/images/img-default.png';
+    }?>) no-repeat center center">
       <div class="container">
         <h2 class="investigation-title"><?php the_title();?></h2>
         <a href="<?php echo get_permalink(); ?>" class="more">Читать статью</a>
@@ -333,7 +355,7 @@ wp_reset_postdata(); // Сбрасываем $post
 
       $myposts = get_posts([
         'numberposts' => 6, 
-        'orderby' => 'date', 
+        // 'orderby' => 'date', 
         'category_name' => 'news, hot, opinions, compilations', 
       ]); 
       if( $myposts ){ 
@@ -341,7 +363,15 @@ wp_reset_postdata(); // Сбрасываем $post
       <!-- Вывод записей -->
       <li class="hotnews-item">
         <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
-          <img class="hotnews-img" width="336" height="195" src="<?php echo get_the_post_thumbnail_url( null, 'hotnews-thumb')?>" alt="">
+
+          <img class="hotnews-img" width="336" height="195" src="<?php 
+          if( has_post_thumbnail() ) {
+            echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
+          }
+          else {
+            echo get_template_directory_uri().'/assets/images/img-default.png';
+          }
+          ?>">
         </a>
         <div class="hotnews-info">
           <button class="bookmark">
