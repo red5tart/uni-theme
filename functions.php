@@ -94,7 +94,7 @@ class Downloader_Widget extends WP_Widget {
 		}
 		if ( ! empty( $link ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link . '">
-			<img class="widget-link-icon" src="' . get_template_directory_uri(). '/assets/images/download.svg" >
+			<svg width="20" height="20" class="icon widget-link-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#download"></use></svg>
 			Скачать</a>';
 		}
 		echo $args['after_widget'];
@@ -219,19 +219,23 @@ class Social_Widget extends WP_Widget {
 		}
 		if ( ! empty( $link1 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link1 . '">
-			<img class="widget-social-icon" src="' . get_template_directory_uri(). '/assets/images/fb.svg" ></a>';
+			<svg width="50" height="50" class="icon widget-social-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#fb"></use></svg>
+			</a>';
 		}
 		if ( ! empty( $link2 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link2 . '">
-			<img class="widget-social-icon" src="' . get_template_directory_uri(). '/assets/images/ig.svg" ></a>';
+			<svg width="50" height="50" class="icon widget-social-icon widget-social-icon-ig"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#ig"></use></svg>
+			</a>';
 		}
 		if ( ! empty( $link3 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link3 . '">
-			<img class="widget-social-icon" src="' . get_template_directory_uri(). '/assets/images/vk.svg" ></a>';
+			<svg width="50" height="50" class="icon widget-social-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#vk"></use></svg>
+			</a>';
 		}
 		if ( ! empty( $link4 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link4 . '">
-			<img class="widget-social-icon" src="' . get_template_directory_uri(). '/assets/images/tw.svg" ></a>';
+			<svg width="50" height="50" class="icon widget-social-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#tw"></use></svg>
+			</a>';
 		}
 		echo $args['after_widget'];
 	}

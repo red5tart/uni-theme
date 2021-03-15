@@ -731,7 +731,7 @@ body {
   margin-bottom: auto;
 }
 
-.comments, .likes {
+.comments {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,11 +740,11 @@ body {
           align-items: center;
 }
 
-.comments-icon, .likes-icon {
+.comments-icon {
   fill: #BCBFC2;
 }
 
-.comments-counter, .likes-counter {
+.comments-counter {
   color: #939699;
   font-size: 12px;
   line-height: 15px;
@@ -828,6 +828,7 @@ body {
 
 .widget-downloader .widget-link-icon {
   margin-right: 10px;
+  fill: #fff;
 }
 
 .widget-downloader .description {
@@ -858,6 +859,10 @@ body {
 .widget-social-icon {
   margin-left: 6px;
   margin-right: 6px;
+}
+
+.widget-social-icon-ig {
+  fill: linear-gradient(45deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
 }
 
 .widget-social .widget-title {
@@ -1086,4 +1091,59 @@ body {
   top: 0;
   padding: 0;
   cursor: pointer;
+}
+
+.special {
+  background-color: #262D33;
+  padding: 60px 0;
+  color: #ffffff;
+}
+
+.special-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.photo-report {
+  min-height: 570px;
+  width: 49%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: thin red solid;
+}
+
+.photo-report-button {
+  color: #ffffff;
+  background: #4592FF;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  fill: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.other {
+  width: 49%;
+  border: thin red solid;
+  border-radius: 10px;
+}
+
+.other-posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
