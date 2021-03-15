@@ -744,6 +744,10 @@ body {
   fill: #BCBFC2;
 }
 
+.comments-icon-white {
+  fill: #fff;
+}
+
 .comments-counter {
   color: #939699;
   font-size: 12px;

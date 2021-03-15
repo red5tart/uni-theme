@@ -219,7 +219,7 @@
                             <span class="author-name"><strong><?php the_author() ?></strong></span>
                             <span class="date"><?php the_time( 'j F' )?></span>
                             <div class="comments">
-                              <svg width="15" height="15" fill="#fff" class="icon comments-icon">
+                              <svg width="15" height="15" class="icon comments-icon-white">
                                 <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#comment"></use>
                               </svg>
                               <span class="comments-counter">
@@ -228,7 +228,7 @@
                             </div>
                               <!-- /.comments -->
                             <div class="likes">
-                              <svg width="13" height="13" fill="#fff" class="icon comments-icon">
+                              <svg width="13" height="13" class="icon comments-icon-white">
                                 <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#heart"></use>
                               </svg>
                               <span class="comments-counter">
