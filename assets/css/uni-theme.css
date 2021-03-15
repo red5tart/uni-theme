@@ -862,7 +862,19 @@ body {
 }
 
 .widget-social-icon-ig {
-  fill: linear-gradient(45deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
+  fill: #b62b73;
+}
+
+.widget-social-icon-vk {
+  fill: #45668e;
+}
+
+.widget-social-icon-fb {
+  fill: #4267B2;
+}
+
+.widget-social-icon-tw {
+  fill: #1DA1F2;
 }
 
 .widget-social .widget-title {

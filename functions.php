@@ -219,7 +219,7 @@ class Social_Widget extends WP_Widget {
 		}
 		if ( ! empty( $link1 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link1 . '">
-			<svg width="50" height="50" class="icon widget-social-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#fb"></use></svg>
+			<svg width="50" height="50" class="icon widget-social-icon widget-social-icon-fb"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#fb"></use></svg>
 			</a>';
 		}
 		if ( ! empty( $link2 ) ) {
@@ -229,12 +229,12 @@ class Social_Widget extends WP_Widget {
 		}
 		if ( ! empty( $link3 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link3 . '">
-			<svg width="50" height="50" class="icon widget-social-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#vk"></use></svg>
+			<svg width="50" height="50" class="icon widget-social-icon widget-social-icon-vk"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#vk"></use></svg>
 			</a>';
 		}
 		if ( ! empty( $link4 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link4 . '">
-			<svg width="50" height="50" class="icon widget-social-icon"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#tw"></use></svg>
+			<svg width="50" height="50" class="icon widget-social-icon widget-social-icon-tw"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#tw"></use></svg>
 			</a>';
 		}
 		echo $args['after_widget'];
