@@ -448,37 +448,49 @@ wp_reset_postdata(); // Сбрасываем $post
             $query->the_post(); 
             ?>
         <div class="photo-report">
+          <!-- Slider main container -->
+          <div class="swiper-container photo-report-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <?php $images = get_attached_media( 'image' ); 
+                foreach ($images as $image ) {
+                  echo '<div class="swiper-slide"><img src="';
+                  print_r($image -> guid); 
+                  echo '"></div>';
+                }
+              ?>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        <div class="photo-report-content">
           <?php
             foreach (get_the_category() as $category) {
               printf(
-                '<a href="%s" class="category-link %s">%s</a>', 
+                '<a href="%s" class="category-link ">%s</a>', 
                 esc_url( get_category_link( $category ) ) , 
-                esc_html( $category -> slug ),
                 esc_html( $category -> name )
               );
             }
           ?>
-        <img src="<?php the_post_thumbnail_url() ?>" alt="" class="post-thumb"/>
-        <?php $author_id = get_the_author_meta('ID') ?>
-        <a href="<?php echo get_author_posts_url($author_id) ?>" class="author">
-          <img
-            src="<?php echo get_avatar_url($author_id) ?>"
-            alt=""
-            class="avatar"
-          />
-          <div class="author-bio">
-            <span class="author-name"><?php the_author(); ?></span>
-            <span class="author-rank">Должность</span>
-          </div>
-        </a>
-        <h3 class="photo-report-title"><?php the_title(); ?></h3>
-        <a href="<?php echo get_the_permalink( )?>" class="button photo-report-button">
-          <svg width="19" height="15" class="icon photo-report-icon">
-            <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#images"></use>
-          </svg>
-          Смотреть фото
-          <span class="button-photo-counter">26</span>
-        </a>
+          <?php $author_id = get_the_author_meta('ID') ?>
+          <a href="<?php echo get_author_posts_url($author_id) ?>" class="author">
+            <img src="<?php echo get_avatar_url($author_id) ?>" class="author-avatar"/>
+            <div class="author-bio">
+              <span class="author-name"><?php the_author(); ?></span>
+              <span class="author-rank">Должность</span>
+            </div>
+          </a>
+          <h3 class="photo-report-title"><?php the_title(); ?></h3>
+          <a href="<?php echo get_the_permalink( )?>" class="button photo-report-button">
+            <svg width="19" height="15" class="icon photo-report-icon">
+              <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#images"></use>
+            </svg>
+            Смотреть фото
+            <span class="photo-report-counter"><?php echo count($images)?></span>
+          </a>
+        </div>
+        <!-- /.photo-report-content -->
       </div>
       <!-- /.photo-report -->
         <?php 
@@ -502,3 +514,4 @@ wp_reset_postdata(); // Сбрасываем $post
   <!-- /.container -->
 </div>
 <!-- /.special -->
+<?php wp_footer(); ?>

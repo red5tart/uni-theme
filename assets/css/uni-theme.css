@@ -998,8 +998,7 @@ body {
   width: 74%;
   list-style: none;
   padding: 0;
-  margin: 0;
-  margin-top: 30px;
+  margin: 30px 0 60px 0;
   background-color: #fff;
   border-radius: 10px;
   padding: 0 25px;
@@ -1130,7 +1129,59 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  border: thin red solid;
+}
+
+.photo-report .category-link {
+  color: #FFFFFF;
+  border-radius: 3px;
+  background: #3DC47E;
+  font-size: 12px;
+  line-height: 15px;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  text-transform: none;
+  padding: 5px 12px;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+}
+
+.photo-report .author {
+  text-align: center;
+  text-decoration: none;
+}
+
+.photo-report .author-name {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.photo-report .author-rank {
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.photo-report .author-avatar {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 8px;
+}
+
+.photo-report::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(64, 48, 61, 0.35)), to(rgba(64, 48, 61, 0.35)));
+  background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35));
+  z-index: 1;
 }
 
 .photo-report-button {
@@ -1147,6 +1198,68 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 20px;
+}
+
+.photo-report-button:hover {
+  color: #ffffff;
+}
+
+.photo-report-button:visited {
+  color: #ffffff;
+}
+
+.photo-report-counter {
+  margin-left: 8px;
+}
+
+.photo-report-icon {
+  margin-right: 8px;
+}
+
+.photo-report-content {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 18px;
+  height: 100%;
+  text-align: center;
+}
+
+.photo-report-slider {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-report-slider .swiper-slide {
+  height: 100%;
+}
+
+.photo-report-slider .swiper-slide img {
+  width: 100%;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.photo-report-title {
+  font-family: Roboto Slab;
+  font-size: 40px;
+  line-height: 50px;
 }
 
 .other {
