@@ -392,7 +392,7 @@ wp_reset_postdata(); // Сбрасываем $post
           <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
             <h4 class="hotnews-title"><?php echo get_the_title(); ?></h4>
             <p class="hotnews-excerpt">
-              <?php the_excerpt(); ?>
+              <?php echo mb_strimwidth(get_the_excerpt(), 0, 180, '...'); ?>
             </p>
             <div class="hotnews-footer">
               <span class="hotnews-date"><?php the_time( 'j F' )?></span>
