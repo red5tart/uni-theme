@@ -9,6 +9,17 @@
             <?php dynamic_sidebar( 'sidebar-footer' ); ?>
           </div>
           <!-- /.footer-menu-bar -->
+          <div class="footer-info">
+            <?php 
+              wp_nav_menu( [
+                'theme_location'  => 'footer_menu',
+                'container'       => 'nav', 
+                'menu_class'      => 'footer-nav', 
+                'echo'            => true,
+              ] );        
+            ?>
+          </div>
+          <!-- /.footer-info -->
       </div>
       <!-- /.container -->
     </footer>
