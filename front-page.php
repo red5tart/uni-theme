@@ -363,7 +363,6 @@ wp_reset_postdata(); // Сбрасываем $post
       <!-- Вывод записей -->
       <li class="hotnews-item">
         <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
-
           <img class="hotnews-img" width="336" height="195" src="<?php 
           if( has_post_thumbnail() ) {
             echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
@@ -502,10 +501,74 @@ wp_reset_postdata(); // Сбрасываем $post
           }
         wp_reset_postdata(); // Сбрасываем $post
       ?>
-
-      
       <div class="other">
+        <?php		
+        global $post;
 
+        $query = new WP_Query( [
+          'posts_per_page' => 1,
+          'category_name' => 'career',
+        ] );
+        if ( $query->have_posts() ) {
+          while ( $query->have_posts() ) {
+            $query->the_post();
+            ?>
+            <div class="career-post">      
+              <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name;?></span>
+              <h4 class="career-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 60, '...');
+              ?></h4>
+              <p class="career-post-excerpt">
+                <?php echo mb_strimwidth(get_the_excerpt(), 0, 120, '...'); ?>
+              </p>
+              <a href="<?php echo the_permalink()?>" class="article-grid-permalink">
+                <div class="more">Читать далее</div>
+              </a>
+            </div>
+            <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+            <?php 
+          }
+        } else {
+          // Постов не найдено
+        }
+
+        wp_reset_postdata(); // Сбрасываем $post
+        ?>
+        <!-- Начало - career-other-posts -->
+        <div class="other-wrapper">
+          <?php		
+          global $post;
+
+          $query = new WP_Query( [
+            'posts_per_page' => 2,
+            'offset' => '7',
+          ] );
+
+          if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+              $query->the_post();
+              ?>
+              <div class="other-posts" >
+                  <a href="<?php echo the_permalink()?>" class="article-grid-permalink">
+                    <h4 class="other-posts-title"><?php echo mb_strimwidth(get_the_title(), 0, 20, '...');?></h4>
+                    <p class="other-posts-excerpt">
+                      <?php echo mb_strimwidth(get_the_excerpt(), 0, 86, '...');
+                    ?>
+                    </p>
+                    <span class="article-date"><?php the_time( 'j F Y' )?></span>
+                  </a>
+              </div>
+              <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+              <?php 
+            }
+          } else {
+            // Постов не найдено
+          }
+
+          wp_reset_postdata(); // Сбрасываем $post
+          ?>
+        <!-- /.career-other-posts -->
+        </div>
+        <!-- /.other-wrapper -->
       </div>
       <!-- /.other -->
     </div>
