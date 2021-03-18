@@ -1384,10 +1384,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .footer-menu-title {
@@ -1453,4 +1450,31 @@ body {
 
 .footer-nav-wrapper {
   margin-right: auto;
+}
+
+.footer-text {
+  max-width: 750px;
+}
+
+.footer-text-wrapper {
+  color: #939699;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 40px;
+}
+
+.footer-text-wrapper p {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.footer .widget-link {
+  text-decoration: none;
 }

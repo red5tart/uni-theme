@@ -156,7 +156,7 @@ class Downloader_Widget extends WP_Widget {
 	}
 
 	// скрипт виджета
-	function add_my_widget_scripts() {
+	function add_downloader_widget_scripts() {
 		// фильтр чтобы можно было отключить скрипты
 		if( ! apply_filters( 'show_my_widget_script', true, $this->id_base ) )
 			return;
@@ -167,7 +167,7 @@ class Downloader_Widget extends WP_Widget {
 	}
 
 	// стили виджета
-	function add_my_widget_style() {
+	function add_downloader_widget_style() {
 		// фильтр чтобы можно было отключить стили
 		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
 			return;
@@ -308,7 +308,7 @@ class Social_Widget extends WP_Widget {
 	}
 
 	// скрипт виджета
-	function add_my_widget_scripts() {
+	function add_social_widget_scripts() {
 		// фильтр чтобы можно было отключить скрипты
 		if( ! apply_filters( 'show_my_widget_script', true, $this->id_base ) )
 			return;
@@ -319,7 +319,7 @@ class Social_Widget extends WP_Widget {
 	}
 
 	// стили виджета
-	function add_my_widget_style() {
+	function add_social_widget_style() {
 		// фильтр чтобы можно было отключить стили
 		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
 			return;
