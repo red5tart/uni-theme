@@ -52,11 +52,20 @@ function uni_theme_widgets_init() {
 				register_sidebar(array(
 			'name'          => esc_html__( 'Меню в подвале', 'uni-theme' ),
 			'id'            => 'sidebar-footer',
-			'description'   => esc_html__( 'Добавте сюда меню', 'uni-theme' ),
+			'description'   => esc_html__( 'Добавьте сюда меню', 'uni-theme' ),
 			'before_widget' => '<section id="%1$s" class="footer-menu %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="footer-menu-title">',
 			'after_title'   => '</h2>',
+		));
+				register_sidebar(array(
+			'name'          => esc_html__( 'Текст в подвале', 'uni-theme' ),
+			'id'            => 'sidebar-footer-text',
+			'description'   => esc_html__( 'Добавьте сюда текст', 'uni-theme' ),
+			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<>',
+			'after_title'   => '<>',
 		));
 }
 add_action( 'widgets_init', 'uni_theme_widgets_init' );
