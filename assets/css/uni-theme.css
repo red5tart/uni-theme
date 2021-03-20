@@ -534,9 +534,33 @@ body {
   line-height: 20px;
 }
 
+@media screen and (max-width: 1024px) {
+  .article-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .article-item {
+    width: 50%;
+    padding: 25px;
+  }
+  .article-permalink {
+    width: 60%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .article-list {
     margin-top: 30px;
+  }
+  .article-item {
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .article-item {
+    width: 100%;
   }
 }
 
