@@ -965,7 +965,7 @@ body {
 }
 
 .sidebar-front-page .widget-social-wrapper {
-  padding: 10px 30px 20px;
+  padding: 10px 16px 20px;
 }
 
 .widget {
@@ -1043,26 +1043,21 @@ body {
 }
 
 .widget-social {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 .widget-social-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.widget-social-icon {
-  margin-left: 6px;
-  margin-right: 6px;
 }
 
 .widget-social-icon-ig {
@@ -1186,6 +1181,9 @@ body {
 @media screen and (max-width: 960px) {
   .sidebar-front-page {
     width: 100%;
+  }
+  .sidebar-front-page .widget-social-wrapper {
+    width: 280px;
   }
 }
 

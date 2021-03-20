@@ -235,6 +235,7 @@ class Social_Widget extends WP_Widget {
 		if ( ! empty( $title ) ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
+		echo('<div class="widget-social-wrapper">');
 		if ( ! empty( $link1 ) ) {
 			echo '<a target="_blank" class="widget-link" href="' . $link1 . '">
 			<svg width="50" height="50" class="icon widget-social-icon widget-social-icon-fb"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#fb"></use></svg>
@@ -255,6 +256,7 @@ class Social_Widget extends WP_Widget {
 			<svg width="50" height="50" class="icon widget-social-icon widget-social-icon-tw"><use xlink:href="' . get_template_directory_uri(). '/assets/images/sprite.svg#tw"></use></svg>
 			</a>';
 		}
+		echo('</div>');
 		echo $args['after_widget'];
 	}
 
