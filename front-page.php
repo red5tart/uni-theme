@@ -44,16 +44,16 @@
           <a href="<?php echo get_permalink(); ?>" class="more">Читать далее</a>
         </div>
         <?php 
-        }
-      } else {
-        // Постов не найдено
+          }
+        } else {
+          // Постов не найдено
         ?>
         <p>Постов нет</p>
         <?php
-      }
+          }
 
-      wp_reset_postdata(); // Сбрасываем $post
-    ?>
+          wp_reset_postdata(); // Сбрасываем $post
+        ?>
       </div>
       <!-- /.left -->
       <div class="right">

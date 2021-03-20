@@ -93,7 +93,7 @@ body
         text-decoration: none
   &-recent-posts
     &-wrapper
-      padding: 17px 25px
+      padding: 0 17px 25px
     a
       display: flex
       align-items: center
@@ -145,3 +145,11 @@ body
     padding: 5px 15px
     border: 1px solid #D9DADB
     border-radius: 5px
+@media screen and ( max-width: 1200px )
+  .sidebar
+    &-front-page
+      width: 30%
+@media screen and ( max-width: 960px )
+  .sidebar
+    &-front-page
+      width: 100%
