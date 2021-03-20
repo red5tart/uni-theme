@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!-- начало 3 урока 18:44, скорость 1.4 -->
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -28,6 +28,11 @@
         ] );
       ?>
       <?php get_search_form(); ?>
+      <a href="" class="header-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </a>
     </div>
     <!-- /.header-wrapper -->
   </div>
