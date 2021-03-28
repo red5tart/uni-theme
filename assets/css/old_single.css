@@ -1,0 +1,128 @@
+.post-header {
+  padding: 60px 0 72px;
+  color: #ffffff;
+}
+
+.post-header-wrapper {
+  position: relative;
+}
+
+.post-header-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.4;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-header-info svg {
+  fill: #fff;
+}
+
+.post-header-date {
+  margin-right: 20px;
+}
+
+.post-header-likes, .post-header-comments {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-header-likes svg, .post-header-comments svg {
+  margin-right: 5px;
+}
+
+.post-header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.post-header .home-link {
+  text-decoration: none;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.post-header .home-link svg {
+  fill: #fff;
+  margin-right: 6px;
+}
+
+.post-header .nav-links {
+  min-width: 160px;
+}
+
+.post-header .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.post-header .nav-links svg {
+  fill: #fff;
+}
+
+.post-header .nav-links .prev-icon {
+  margin-right: 8px;
+}
+
+.post-header .nav-links .next-icon {
+  margin-left: 8px;
+}
+
+.post-header .navigation {
+  margin: 0;
+}
+
+.post-header p {
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 43px;
+  max-width: 630px;
+  opacity: 0.85;
+}
+
+.post-header-title {
+  font-size: 55px;
+  line-height: 70px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  max-width: 750px;
+  margin-top: 52px;
+  margin-bottom: 30px;
+}
+
+.post-header-title-wrapper {
+  position: relative;
+}
+
+.post-header-title-wrapper .bookmark svg {
+  width: 30px;
+  height: 30px;
+  fill: #BCBFC2;
+}

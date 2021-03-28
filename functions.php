@@ -526,3 +526,8 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'thumb65', 65, 65, true ); // Кадрирование изображения
 	add_image_size( 'hotnews-thumb', 336, 195, true ); 
 }
+
+## меняем стиль многоточия 
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
