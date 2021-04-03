@@ -23,10 +23,10 @@
 
             $instance = array (
               'title' => '',
-              'link1' => 'http:/facebook.com',
-              'link2' => 'http:/instagram.com',
-              'link3' => 'http:/vkontakte.com',
-              'link4' => 'http:/twitter.com'                         
+              'link1' => 'http://facebook.com',
+              'link2' => 'http://instagram.com',
+              'link3' => 'http://vkontakte.com',
+              'link4' => 'http://twitter.com'                         
             );
             $args = array (
               'before_widget' => '<div class="footer-social">',
