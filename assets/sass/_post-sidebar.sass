@@ -1,5 +1,32 @@
-.sidebar
-  &-post
-    &-wrapper
-      background-color: #F5F5F5
-      color: orange
+.sidebar-post
+  display: flex
+  padding: 0
+  margin: 0 auto
+  justify-content: space-between
+  &-wrapper
+    padding: 60px 113px 90px
+    margin-top: 60px
+    background-color: #F5F5F5
+  &-item
+    padding: 0
+    margin: 0
+    list-style: none
+    &-permalink
+      text-decoration: none
+      img
+        border-radius: 10px
+        width: 263px
+        height: 180px
+  &-title
+    max-width: 263px
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 25px
+    color: #262D33
+    font-family: Roboto Slab
+  &-footer
+    display: flex
+    .comments
+      &:not(:last-child)
+        margin-right: 10px
