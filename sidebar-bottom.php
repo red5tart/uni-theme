@@ -11,6 +11,6 @@ if ( ! is_active_sidebar( 'bottom-sidebar' ) ) {
 }
 ?>
 
-<div id="secondary2" class="sidebar-front-page">
+<div class="sidebar-front-page">
 	<?php dynamic_sidebar( 'bottom-sidebar' ); ?>
-</div><!-- #secondary2 -->
+</div>
