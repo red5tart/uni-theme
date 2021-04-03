@@ -2096,3 +2096,8 @@ body {
   margin-top: 30px;
   margin-bottom: 25px;
 }
+
+.sidebar-post-wrapper {
+  background-color: #F5F5F5;
+  color: orange;
+}

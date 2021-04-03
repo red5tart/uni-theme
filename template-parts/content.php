@@ -154,7 +154,7 @@
         meks_ess_share();
       ?>
     </footer><!-- .post-footer -->
-
   </div>
   <!-- /.container -->
+  <?php get_sidebar('post');?>
 </article> 
