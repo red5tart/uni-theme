@@ -1,0 +1,42 @@
+.pagination
+  .nav-links
+    margin: 40px 0 115px
+    background-color: #fff
+    border-radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    *
+      padding: 17px
+      text-decoration: none
+      font-size: 14px
+      line-height: 20px
+      font-family: "Lato Black"
+      color: #262D33
+      text-align: center
+      &:not(:last-child)
+        border-right: 1px solid #D9DADB
+    .prev
+      padding: 17px 70px
+      margin-right: auto
+      flex-grow: 1
+    .next
+      padding: 17px 70px
+      margin-left: auto
+      flex-grow: 1
+    .current
+      color: #4592FF
+  &-prev
+    &-icon
+      padding: 0 !important
+      margin-right: 8px
+      width: 15px
+      height: 7px
+      fill: #BCBFC2
+  &-next
+    &-icon
+      padding: 0 !important
+      margin-left: 8px
+      width: 15px
+      height: 7px
+      fill: #BCBFC2

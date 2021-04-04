@@ -390,7 +390,7 @@ class Recent_Posts_Widget extends WP_Widget {
 			}
 			echo '<div class="widget-recent-posts-wrapper">';
 			global $post;
-			$postslist = get_posts( array( 'posts_per_page' => $count, 'order'=> 'ASC', 'orderby' => 'date' ) );
+			$postslist = get_posts( array( 'posts_per_page' => $count, 'order'=> 'DESC', 'orderby' => 'date' ) );
 			foreach ( $postslist as $post ){
 				setup_postdata($post);
 				?>

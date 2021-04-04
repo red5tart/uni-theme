@@ -349,83 +349,86 @@ wp_reset_postdata(); // Сбрасываем $post
 
 <div class="container">
   <div class="hotnews-wrapper">
-    <ul class="hotnews">
-      <?php 
-      global $post;
+    <div class="hotnews-column">
+      <ul class="hotnews">
+        <?php 
+        global $post;
 
-      $myposts = get_posts([
-        'numberposts' => 6, 
-        // 'orderby' => 'date', 
-        'category_name' => 'news, hot, opinions, compilations', 
-      ]); 
-      if( $myposts ){ 
-      foreach( $myposts as $post ){ setup_postdata( $post ); ?>
-      <!-- Вывод записей -->
-      <li class="hotnews-item">
-        <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
-          <img class="hotnews-img" width="336" height="195" src="<?php 
-          if( has_post_thumbnail() ) {
-            echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
-          }
-          else {
-            echo get_template_directory_uri().'/assets/images/img-default.png';
-          }
-          ?>">
-        </a>
-        <div class="hotnews-info">
-          <button class="bookmark">
-            <svg width="14" height="18" class="icon comments-icon">
-              <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#bookmark"></use>
-            </svg>
-          </button>
-          <?php
-            foreach (get_the_category() as $category) {
-                printf(
-                  '<a href="%s" class="category-link %s">%s</a>', 
-                  esc_url( get_category_link( $category ) ) , 
-                  esc_html( $category -> slug ),
-                  esc_html( $category -> name )
-                );
-              }
-          ?>
+        $myposts = get_posts([
+          'numberposts' => 6, 
+          // 'orderby' => 'date', 
+          'category_name' => 'news, hot, opinions, compilations', 
+        ]); 
+        if( $myposts ){ 
+        foreach( $myposts as $post ){ setup_postdata( $post ); ?>
+        <!-- Вывод записей -->
+        <li class="hotnews-item">
           <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
-            <h4 class="hotnews-title"><?php echo get_the_title(); ?></h4>
-            <p class="hotnews-excerpt">
-              <?php echo mb_strimwidth(get_the_excerpt(), 0, 180, '...'); ?>
-            </p>
-            <div class="hotnews-footer">
-              <span class="hotnews-date"><?php the_time( 'j F' )?></span>
-              <div class="hotnews-comments">
-                <svg width="15" height="15" class="icon comments-icon">
-                  <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#comment"></use>
-                </svg>
-                <span class="comments-counter">
-                  <?php comments_number('0', '1', '%') ?>
-                </span>
+            <img class="hotnews-img" width="336" height="195" src="<?php 
+            if( has_post_thumbnail() ) {
+              echo get_the_post_thumbnail_url( null, 'hotnews-thumb');
+            }
+            else {
+              echo get_template_directory_uri().'/assets/images/img-default.png';
+            }
+            ?>">
+          </a>
+          <div class="hotnews-info">
+            <button class="bookmark">
+              <svg width="14" height="18" class="icon comments-icon">
+                <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#bookmark"></use>
+              </svg>
+            </button>
+            <?php
+              foreach (get_the_category() as $category) {
+                  printf(
+                    '<a href="%s" class="category-link %s">%s</a>', 
+                    esc_url( get_category_link( $category ) ) , 
+                    esc_html( $category -> slug ),
+                    esc_html( $category -> name )
+                  );
+                }
+            ?>
+            <a class="hotnews-item-permalink" href="<?php echo get_the_permalink(); ?>">
+              <h4 class="hotnews-title"><?php echo get_the_title(); ?></h4>
+              <p class="hotnews-excerpt">
+                <?php echo mb_strimwidth(get_the_excerpt(), 0, 180, '...'); ?>
+              </p>
+              <div class="hotnews-footer">
+                <span class="hotnews-date"><?php the_time( 'j F' )?></span>
+                <div class="hotnews-comments">
+                  <svg width="15" height="15" class="icon comments-icon">
+                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#comment"></use>
+                  </svg>
+                  <span class="comments-counter">
+                    <?php comments_number('0', '1', '%') ?>
+                  </span>
+                </div>
+                <div class="hotnews-likes">
+                  <svg width="13" height="13" class="icon comments-icon">
+                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#heart"></use>
+                  </svg>
+                  <span class="comments-counter">
+                    <?php comments_number('0', '1', '%') ?>
+                  </span>
+                </div>
               </div>
-              <div class="hotnews-likes">
-                <svg width="13" height="13" class="icon comments-icon">
-                  <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#heart"></use>
-                </svg>
-                <span class="comments-counter">
-                  <?php comments_number('0', '1', '%') ?>
-                </span>
-              </div>
-            </div>
-          </a>          
-        </div>
-        <!-- /.hotnews-info -->
-      </li>
-      <?php 
-        }
-      } else {
-      ?>
-      <p>Постов нет</p>
-      <?php
-        }
-      wp_reset_postdata(); // Сбрасываем $post
-      ?>
-    </ul> 
+            </a>          
+          </div>
+          <!-- /.hotnews-info -->
+        </li>
+        <?php 
+          }
+        } else {
+        ?>
+        <p>Постов нет</p>
+        <?php
+          }
+        wp_reset_postdata(); // Сбрасываем $post
+        ?>
+      </ul> 
+    </div>
+    <!-- /.hotnews-column -->
     <!-- Подключаем сайдбар -->
     <?php get_sidebar('bottom');?> 
   </div> <!-- /.hotnews-wrapper -->
