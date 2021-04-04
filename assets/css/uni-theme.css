@@ -1754,6 +1754,60 @@ body {
   height: 40px;
 }
 
+.footer-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 70px;
+}
+
+.footer-form-wrapper {
+  max-width: 760px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-form-title {
+  font-family: Roboto Slab;
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+.footer-form input {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: 1px solid #D9DADB;
+  border-radius: 5px;
+  min-width: 313px;
+}
+
+.footer-form button {
+  background: #4592FF;
+  border-radius: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+}
+
 .post-header {
   padding: 60px 0 72px;
   color: #ffffff;
