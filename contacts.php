@@ -27,21 +27,21 @@ get_header(); ?>
         </div>
         <!-- /.left -->
         <div class="right">
-          <h2 class="contacts-title">Или по этим контактам</h2>
+          <h2 class="contacts-title">Или по этим контактам (ACF)</h2>
           <?php 
           //проверка наличия поля email
-            $email = get_post_meta( get_the_ID(), 'email', true );
-            if ($email) {echo '<a href="mailto:' . $email . '">' . $email . '</a>';}?>     
+            $email = get_field('email');
+            if ($email) {echo '<a href="mailto:' . $email . '">' . $email . '</a>';}?> 
           
           <?php 
             //проверка наличия поля address
-            $address = get_post_meta( get_the_ID(), 'address', true );
+            $address = get_field('address');
             if ($address) {echo '<address>' . $address . '</address>';}?>
               
           <?php 
             //проверка наличия поля phone
-            $phone = get_post_meta( get_the_ID(), 'phone', true );
-            if ($phone) {echo '<a href="tel:' . $phone . '">' . $phone . '</a>';}?>
+            $phone = get_field('phone');
+            if ($phone) {echo '<a href="tel:' . $phone . '">' . $phone . '</a>';} ?>
 
         </div>
         <!-- /.right -->

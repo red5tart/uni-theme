@@ -64,7 +64,7 @@
         ?>
         <div class="footer-text-wrapper">
           <?php dynamic_sidebar( 'sidebar-footer-text' ); ?>
-          <span class="footer-copyright"><?php echo date('Y') . ' &copy; ' . get_bloginfo( 'name' );?></span>
+          <span class="footer-copyright"><?php echo get_field('email', 98) . ' &copy; ' . get_bloginfo( 'name' );?></span>
           <!-- /.footer-copyright -->
         </div>
         <!-- /.footer-text-wrapper -->
