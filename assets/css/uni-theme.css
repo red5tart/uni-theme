@@ -2630,6 +2630,10 @@ body {
   margin-right: 80px;
 }
 
+.contacts-wrapper .right {
+  width: 250px;
+}
+
 .contacts-wrapper .right a, .contacts-wrapper .right address {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
@@ -2685,4 +2689,8 @@ body {
 
 #wpcf7-more:visited, #wpcf7-more:focus, #wpcf7-more:hover {
   color: #ffffff;
+}
+
+.partnership-title {
+  color: blue;
 }
