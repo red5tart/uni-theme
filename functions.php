@@ -498,6 +498,41 @@ function enqueue_unitheme_style() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_unitheme_style' );
 
+add_action( 'wp_enqueue_scripts', 'adminAjax_data', 99 );
+function adminAjax_data(){
+	wp_localize_script( 'jquery', 'adminAjax',
+		array(
+			'url' => admin_url('admin-ajax.php')
+		)
+	);
+}
+
+add_action('wp_ajax_contacts_form', 'ap_ajax_form');
+add_action('wp_ajax_nopriv_contacts_form', 'ap_ajax_form');
+
+function ap_ajax_form() {
+	$contact_name = $_POST['contact_name'];
+	$contact_email = $_POST['contact_email'];
+	$contact_comment = $_POST['contact_comment'];
+	$message = 'Пользователь с именем ' . $contact_name . ' отправил вопрос "' . $contact_comment . '", указав обратный адрес ' . $contact_email . '.';
+/* 	$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+	mail('red5tart@mail.ru', 'заявка через форму на сайте', $message, $headers );
+	echo "ok"; */
+	
+	$headers = 'From: Red27 <red5tart@mail.ru>' . "\r\n";
+
+	$sent_message = wp_mail('spellstone@yandex.ru', 'Новая заявка через форму на сайте', $message, $headers);
+	// выход нужен для того, чтобы в ответе не было ничего лишнего, только то что возвращает функция
+	if ( $sent_message ) {
+		echo "Все получилось";
+	} else {
+		echo "Где-то ошибка";
+	}
+	wp_die();
+}
+
 ## меняем настройки облака тегов
 add_filter( 'widget_tag_cloud_args', 'edit_widget_tag_cloud_args');
 function edit_widget_tag_cloud_args($args) {

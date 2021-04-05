@@ -2594,3 +2594,95 @@ body {
 .post-card .comments svg, .post-card .likes svg {
   fill: #BCBFC2;
 }
+
+.section-dark {
+  background: #262D33;
+  color: #fff;
+  padding: 50px 122px;
+}
+
+.page-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  margin-top: 0;
+  margin-bottom: 27px;
+}
+
+.contacts-title {
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 28px;
+}
+
+.contacts-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts-wrapper .left {
+  margin-right: 80px;
+}
+
+.contacts-wrapper .right a, .contacts-wrapper .right address {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: normal;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.wpcf7-form, .contacts-form {
+  max-width: 460px;
+}
+
+.wpcf7-form input, .contacts-form input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #939699;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+.wpcf7-form textarea, .contacts-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #939699;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  min-height: 120px;
+  resize: none;
+}
+
+#wpcf7-more {
+  display: inline-block;
+  width: auto;
+  color: #ffffff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  background: #4592FF;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-image: url("../images/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+}
+
+#wpcf7-more:visited, #wpcf7-more:focus, #wpcf7-more:hover {
+  color: #ffffff;
+}
