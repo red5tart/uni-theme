@@ -2509,6 +2509,14 @@ body {
   margin-bottom: 30px;
 }
 
+.post-card a {
+  text-decoration: none;
+}
+
+.post-card a:visited, .post-card a:focus, .post-card a:hover {
+  color: initial;
+}
+
 .post-card:not(:last-child) {
   margin-right: 2%;
 }

@@ -4,6 +4,7 @@
   <div class="post-list">
     <?php while ( have_posts() ){ the_post(); ?>
       <div class="post-card">
+       <a href="<?php echo get_permalink(); ?>" class="">
         <img src="<?php         if( has_post_thumbnail() ) {
             echo get_the_post_thumbnail_url();
           }
@@ -43,7 +44,8 @@
           <!-- /.author -->
         </div>
         <!-- /.post-card-text -->
-        </div>
+        </a>
+      </div>
       <!-- /.post-card -->
     <?php } ?>
     <?php if ( ! have_posts() ){ ?>
