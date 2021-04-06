@@ -56,6 +56,60 @@ if ( ! function_exists( 'uni_theme_setup' ) ) :
 					'supports'           => array('title','editor', 'thumbnail','custom-fields','comments')
 				) );
 			}
+
+			// хук, через который подключается функция
+			// регистрирующая новые таксономии (create_lesson_taxonomies)
+			add_action( 'init', 'create_lesson_taxonomies' );
+
+			// функция, создающая 2 новые таксономии "genres" и "authors" для постов типа "lesson"
+			function create_lesson_taxonomies(){
+
+				// Добавляем древовидную таксономию 'genre' (как категории)
+				register_taxonomy('genre', array('lesson'), array(
+					'hierarchical'  => true,
+					'labels'        => array(
+						'name'              => _x( 'Genres', 'taxonomy general name' ),
+						'singular_name'     => _x( 'Genre', 'taxonomy singular name' ),
+						'search_items'      =>  __( 'Search Genres' ),
+						'all_items'         => __( 'All Genres' ),
+						'parent_item'       => __( 'Parent Genre' ),
+						'parent_item_colon' => __( 'Parent Genre:' ),
+						'edit_item'         => __( 'Edit Genre' ),
+						'update_item'       => __( 'Update Genre' ),
+						'add_new_item'      => __( 'Add New Genre' ),
+						'new_item_name'     => __( 'New Genre Name' ),
+						'menu_name'         => __( 'Genre' ),
+					),
+					'show_ui'       => true,
+					'query_var'     => true,
+					'rewrite'       => array( 'slug' => 'the_genre' ), // свой слаг в URL
+				));
+
+				// Добавляем НЕ древовидную таксономию 'author' (как метки)
+				register_taxonomy('author', 'lesson',array(
+					'hierarchical'  => false,
+					'labels'        => array(
+						'name'                        => _x( 'Authors', 'taxonomy general name' ),
+						'singular_name'               => _x( 'Author', 'taxonomy singular name' ),
+						'search_items'                =>  __( 'Search Authors' ),
+						'popular_items'               => __( 'Popular Authors' ),
+						'all_items'                   => __( 'All Authors' ),
+						'parent_item'                 => null,
+						'parent_item_colon'           => null,
+						'edit_item'                   => __( 'Edit Author' ),
+						'update_item'                 => __( 'Update Author' ),
+						'add_new_item'                => __( 'Add New Author' ),
+						'new_item_name'               => __( 'New Author Name' ),
+						'separate_items_with_commas'  => __( 'Separate authors with commas' ),
+						'add_or_remove_items'         => __( 'Add or remove authors' ),
+						'choose_from_most_used'       => __( 'Choose from the most used authors' ),
+						'menu_name'                   => __( 'Authors' ),
+					),
+					'show_ui'       => true,
+					'query_var'     => true,
+					'rewrite'       => array( 'slug' => 'the_author' ), // свой слаг в URL
+				));
+			}
   }
 endif;
 add_action( 'after_setup_theme', 'uni_theme_setup' );
