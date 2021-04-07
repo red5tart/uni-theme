@@ -79,7 +79,7 @@
     </div>
     <!-- /.hotnews-column -->
     <!-- Подключаем сайдбар -->
-    <?php get_sidebar('bottom');?> 
+    <?php get_sidebar('search');?> 
   </div>
   <!-- /.favorites -->
 </div>

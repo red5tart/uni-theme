@@ -159,7 +159,7 @@ function uni_theme_widgets_init() {
 			'name'          => esc_html__( 'Сайдбар страницы поиска', 'uni-theme' ),
 			'id'            => 'sidebar-search',
 			'description'   => esc_html__( 'Добавьте сюда виджет', 'uni-theme' ),
-			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '',
 			'after_title'   => '',
