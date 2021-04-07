@@ -23,40 +23,6 @@ if ( ! function_exists( 'uni_theme_setup' ) ) :
       'footer_menu' => 'Меню в подвале'
 		] );
 		
-		add_action('init', 'my_custom_init');
-			function my_custom_init(){
-				register_post_type('lesson', array(
-					'labels'             => array(
-						'name'               => 'Уроки', // Основное название типа записи
-						'singular_name'      => 'Урок', // отдельное название записи типа Book
-						'add_new'            => 'Добавить новый',
-						'add_new_item'       => 'Добавить новый урок',
-						'edit_item'          => 'Редактировать урок',
-						'new_item'           => 'Новый урок',
-						'view_item'          => 'Посмотреть урок',
-						'search_items'       => 'Искать уроки',
-						'not_found'          => 'Уроков не найдено',
-						'not_found_in_trash' => 'В корзине уроков не найдено',
-						'parent_item_colon'  => '', //для родителей (у древовидных типов)
-						'menu_name'          => 'Уроки'
-
-						),
-					'public'             => true,
-					'publicly_queryable' => true,
-					'show_ui'            => true,
-					'show_in_menu'       => true,
-					'show_in_rest'       => true,
-					'query_var'          => true,
-					'rewrite'            => true,
-					'capability_type'    => 'post',
-					'has_archive'        => true,
-					'hierarchical'       => false,
-					'menu_position'      => 5,
-					'menu_icon'				   => 'dashicons-welcome-learn-more',
-					'supports'           => array('title','editor', 'thumbnail','custom-fields','comments')
-				) );
-			}
-
 			// хук, через который подключается функция
 			// регистрирующая новые таксономии (create_lesson_taxonomies)
 			add_action( 'init', 'create_lesson_taxonomies' );
@@ -109,6 +75,40 @@ if ( ! function_exists( 'uni_theme_setup' ) ) :
 					'query_var'     => true,
 					'rewrite'       => array( 'slug' => 'the_author' ), // свой слаг в URL
 				));
+			}
+			
+		add_action('init', 'my_custom_init');
+			function my_custom_init(){
+				register_post_type('lesson', array(
+					'labels'             => array(
+						'name'               => 'Уроки', // Основное название типа записи
+						'singular_name'      => 'Урок', // отдельное название записи типа Book
+						'add_new'            => 'Добавить новый',
+						'add_new_item'       => 'Добавить новый урок',
+						'edit_item'          => 'Редактировать урок',
+						'new_item'           => 'Новый урок',
+						'view_item'          => 'Посмотреть урок',
+						'search_items'       => 'Искать уроки',
+						'not_found'          => 'Уроков не найдено',
+						'not_found_in_trash' => 'В корзине уроков не найдено',
+						'parent_item_colon'  => '', //для родителей (у древовидных типов)
+						'menu_name'          => 'Уроки'
+
+						),
+					'public'             => true,
+					'publicly_queryable' => true,
+					'show_ui'            => true,
+					'show_in_menu'       => true,
+					'show_in_rest'       => true,
+					'query_var'          => true,
+					'rewrite'            => true,
+					'capability_type'    => 'post',
+					'has_archive'        => true,
+					'hierarchical'       => false,
+					'menu_position'      => 5,
+					'menu_icon'				   => 'dashicons-welcome-learn-more',
+					'supports'           => array('title','editor', 'thumbnail','custom-fields','comments')
+				) );
 			}
   }
 endif;
