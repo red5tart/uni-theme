@@ -152,8 +152,17 @@ function uni_theme_widgets_init() {
 			'description'   => esc_html__( 'Добавьте сюда текст', 'uni-theme' ),
 			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<>',
-			'after_title'   => '<>',
+			'before_title'  => '',
+			'after_title'   => '',
+		));
+				register_sidebar(array(
+			'name'          => esc_html__( 'Сайдбар страницы поиска', 'uni-theme' ),
+			'id'            => 'sidebar-search',
+			'description'   => esc_html__( 'Добавьте сюда виджет', 'uni-theme' ),
+			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '',
+			'after_title'   => '',
 		));
 }
 add_action( 'widgets_init', 'uni_theme_widgets_init' );
