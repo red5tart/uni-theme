@@ -7,7 +7,7 @@ if ( ! function_exists( 'uni_theme_setup' ) ) :
     add_theme_support( 'title-tag' );
 
     // Добавление миниатюр
-    add_theme_support( 'post-thumbnails', array( 'post' ) );  
+    add_theme_support( 'post-thumbnails', array( 'post', 'lesson'  ) );  
 
     // Добавление пользовательского логотипа
     add_theme_support( 'custom-logo', [
