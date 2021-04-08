@@ -30,17 +30,17 @@ get_header(); ?>
           <h2 class="contacts-title">Или по этим контактам (ACF)</h2>
           <?php 
           //проверка наличия поля email
-            $email = get_field('email');
+            $email = get_field('email_ACF');
             if ($email) {echo '<a href="mailto:' . $email . '">' . $email . '</a>';}?> 
           
           <?php 
             //проверка наличия поля address
-            $address = get_field('address');
+            $address = get_field('address_ACF');
             if ($address) {echo '<address>' . $address . '</address>';}?>
               
           <?php 
             //проверка наличия поля phone
-            $phone = get_field('phone');
+            $phone = get_field('TelNo_ACF');
             if ($phone) {echo '<a href="tel:' . $phone . '">' . $phone . '</a>';} ?>
 
         </div>
